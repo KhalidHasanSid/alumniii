@@ -3,12 +3,12 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Use next/navigation instead of next/router
 
-function Page() {
+export default function Page() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (email === "admin23@gmail.com" && password === "rrr778") {
       router.push("/dashboard"); // Redirect to the dashboard
@@ -67,4 +67,3 @@ function Page() {
     </div>
   );
 }
-export default Page;

@@ -1,5 +1,5 @@
 import React from "react";
-export default function feature() {
+export default function Feature() {
     const features = [
       { icon: "🏛️", title: "About Us" },
       { icon: "👁️", title: "Vision" },

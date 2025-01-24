@@ -38,7 +38,7 @@ function Card({ src, alt, title, description }: CardProps) {
 // Main Hero Component
 export default function Hero() {
   const cards = [
-    { src: "/b5.jpg", alt: "Card 1", title: "SSUET COLLABORATIONS", description: "Cutting-edge projects at the Grand Finale of Finding Innovative & Creative Solutions!" },
+    { src: "/b5.jpg", alt: "Card 1", title: "SSUET COLLABORATIONS", description: "Cutting-edge projects at the Grand Finale of Finding Innovative &amp; Creative Solutions!" },
     { src: "/b2.jpg", alt: "Card 2", title: "INNOVATIVE SOLUTIONS", description: "Bringing new technologies to solve modern challenges!" },
     { src: "/b3.jpg", alt: "Card 3", title: "TECHNOLOGY DRIVEN", description: "Advancing the future with groundbreaking ideas!" },
     { src: "/b7.jpg", alt: "Card 4", title: "COLLABORATIVE EFFORTS", description: "Working together to create lasting impact!" },
@@ -59,7 +59,13 @@ export default function Hero() {
 
       {/* Logo Section */}
       <div className="flex justify-center pt-5">
-        <img src="quadlogo.png" alt="Quad Logo" className="w-32 sm:w-40" />
+        <Image 
+          src="/quadlogo.png" 
+          alt="Quad Logo" 
+          className="w-32 sm:w-40" 
+          width={128} // Width set karein
+          height={32} // Height set karein
+        />
       </div>
 
       {/* Heading Section */}

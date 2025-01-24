@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Footer1 from "@/components/footer1";
 import Footer2 from "@/components/footer2";
-import axios from "axios";
+// import axios from "axios";
 
 export default function Page() {
   const [name, setName] = useState("");
@@ -25,16 +25,17 @@ export default function Page() {
     }
 
     try {
-      const response = await axios.post("http://localhost:7000/api/v1/alumni/register", {
+      const response = await {   
+        // axio.post
         name,
         email,
         contact,
         studentId,
         role,
         designation,
-        organization
-      });
-      console.log(response.data);
+        organization,
+      };
+      console.log(response);
       alert("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting the form:", error);
