@@ -47,7 +47,9 @@ export default function Header2() {
             NEW ALUMNI
           </Link>
         </li>
-        <li className="hover:underline cursor-pointer">EVENTS</li>
+        <li className="hover:underline cursor-pointer">EVENTS
+       
+        </li>
         <li className="hover:underline cursor-pointer">ALUMNI GROUPS</li>
 
         {/* ENGAGE with Dropdown */}

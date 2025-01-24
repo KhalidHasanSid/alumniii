@@ -25,14 +25,14 @@ export default function Page() {
     }
 
     try {
-      const response = await axios.post("/api/form", {
+      const response = await axios.post("http://localhost:7000/api/v1/alumni/register", {
         name,
         email,
         contact,
         studentId,
         role,
         designation,
-        organization,
+        organization
       });
       console.log(response.data);
       alert("Form submitted successfully!");
