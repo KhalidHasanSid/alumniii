@@ -1,44 +1,43 @@
-import React from "react";
-// import { FaChevronDown } from "react-icons/fa";
+/*uguyfufhgfhgf*/
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Header2() {
-  return (
-    <header className="bg-white px-4 sm:px-6 md:px-12 py-4 shadow-md">
-      <div className="flex items-center justify-between flex-nowrap">
-        {/* Logo Section */}
-        <div className="flex-shrink-0">
-        <Image src="/logo.png" width={200} height={100} alt="Logo" />
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  return (
+    <header className="bg-white text-black">
+      <nav className="flex justify-between items-center px-4 py-3 md:px-8">
+       
+        <div>
+          <Image src="/logo.png" width={200} height={100} alt="Logo" />
         </div>
 
-        {/* Navigation Section */}
-        <nav className="flex-grow">
-          <ul className="flex justify-end items-center gap-4 sm:gap-6 ml-2 text-[#521e89] text-sm sm:text-base flex-nowrap">
-            {/* QUAD NEWS with Dropdown */}
-            {/* <li className="relative group">
-              <button className="flex items-center hover:underline whitespace-nowrap">
-                QUAD NEWS <FaChevronDown className="ml-2 text-xs sm:text-sm" />
-              </button>
-              <ul className="absolute hidden group-hover:block bg-[#a460ee] text-white mt-2 rounded shadow-lg w-40 z-10">
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">News</li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Interviews
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Features
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Opinion
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  QUADcast
-                </li>
-              </ul>
-            </li> */}
+        <div
+          className="cursor-pointer md:hidden "
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <span className="block w-8 h-[2px] bg-black mb-1"></span>
+          <span className="block w-8 h-[2px] bg-black mb-1"></span>
+          <span className="block w-8 h-[2px] bg-black"></span>
+        </div>
 
-            {/* Other Navigation Items */}
+       
+        <div
+          className={`fixed top-0 left-0 h-full w-[75%] bg-white z-50 transform ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          } transition-transform duration-300 md:relative md:transform-none md:flex md:h-auto md:w-auto md:bg-transparent`}
+        >
+          <button
+            className="absolute top-4 right-4 text-black md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            ✕
+          </button>
+          <ul className="flex flex-col md:flex-row md:gap-[4vw] gap-4 md:justify-end justify-center items-start md:items-center px-5 py-10 md:p-0">
             <li>
               <Link
                 href="/ssuet"
@@ -63,34 +62,9 @@ export default function Header2() {
             <li className="hover:underline whitespace-nowrap">
               ALUMNI GROUPS
             </li>
-
-            {/* ENGAGE with Dropdown */}
-            {/* <li className="relative group">
-              <button className="flex items-center hover:underline whitespace-nowrap">
-                ENGAGE <FaChevronDown className="ml-2 text-xs sm:text-sm" />
-              </button>
-              <ul className="absolute hidden group-hover:block bg-[#a460ee] text-white mt-2 rounded shadow-lg w-64 z-10">
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Alumni Board
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Book Club
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Distinguished Friend of Oxford
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Offer an Internship
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">
-                  Crankstart Careers Mentoring Programme
-                </li>
-                <li className="p-2 hover:bg-[#8041c4] cursor-pointer">Donate</li>
-              </ul>
-            </li> */}
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
   );
 }
